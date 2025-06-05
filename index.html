@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menstrual Cycle Tracker</title>
+  
+  <!-- Google Font: Inter -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <!-- Step 1: Last Period Start Date -->
+    <div class="step active" id="step1">
+      <!-- Doodle: flower in top-left -->
+      <svg class="doodle doodle-flower" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <!-- Center circle -->
+        <circle cx="32" cy="32" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+        <!-- Petals -->
+        <circle cx="32" cy="12" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+        <circle cx="32" cy="52" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+        <circle cx="12" cy="32" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+        <circle cx="52" cy="32" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+        <!-- Diagonal petals -->
+        <circle cx="18" cy="18" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+        <circle cx="46" cy="46" r="8" fill="none" stroke="#f38181" stroke-width="2"/>
+      </svg>
+
+      <h2>Step 1 of 3</h2>
+      <label for="lastPeriodDate">Last Period Start Date:</label>
+      <input
+        type="date"
+        id="lastPeriodDate"
+        name="lastPeriodDate"
+      />
+      <button class="btn" id="next1" disabled>Next ➔</button>
+    </div>
+
+    <!-- Step 2: Average Cycle Length -->
+    <div class="step" id="step2">
+      <!-- Doodle: leafy sprig in top-right -->
+      <svg class="doodle doodle-leaf" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 4 C40 12, 48 20, 52 32 C48 44, 40 52, 32 60
+                 C28 56, 24 50, 20 46 C16 42, 12 38, 8 32
+                 C12 20, 20 12, 32 4 Z"
+              fill="none" stroke="#90dfee" stroke-width="2"/>
+        <!-- Small veins -->
+        <path d="M32 4 L32 60" fill="none" stroke="#90dfee" stroke-width="1"/>
+        <path d="M32 24 L20 36" fill="none" stroke="#90dfee" stroke-width="1"/>
+        <path d="M32 24 L44 36" fill="none" stroke="#90dfee" stroke-width="1"/>
+      </svg>
+
+      <h2>Step 2 of 3</h2>
+      <label for="cycleLength">Average Cycle Length (days):</label>
+      <input
+        type="number"
+        id="cycleLength"
+        name="cycleLength"
+        min="20"
+        max="45"
+        placeholder="e.g., 28"
+      />
+      <div class="btn-group">
+        <button class="btn" id="back2">◂ Back</button>
+        <button class="btn" id="next2" disabled>Next ➔</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Actual Period Start Date (optional) -->
+    <div class="step" id="step3">
+      <!-- Doodle: small heart cluster in bottom-left -->
+      <svg class="doodle doodle-heart" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <!-- Large heart -->
+        <path d="M32 52 L12 28 C8 24, 8 18, 14 14
+                 C20 10, 26 14, 32 20 C38 14, 44 10, 50 14
+                 C56 18, 56 24, 52 28 L32 52 Z"
+              fill="none" stroke="#ea8fea" stroke-width="2"/>
+        <!-- Small hearts around -->
+        <path d="M16 16 L14 14 C12 12, 10 12, 12 10 C14 8, 16 10, 16 12 Z"
+              fill="none" stroke="#ea8fea" stroke-width="1"/>
+        <path d="M48 16 L46 14 C44 12, 42 12, 44 10 C46 8, 48 10, 48 12 Z"
+              fill="none" stroke="#ea8fea" stroke-width="1"/>
+      </svg>
+
+      <h2>Step 3 of 3</h2>
+      <label for="actualStartDate">Actual Period Start Date (optional):</label>
+      <input
+        type="date"
+        id="actualStartDate"
+        name="actualStartDate"
+      />
+      <div class="btn-group">
+        <button class="btn" id="back3">◂ Back</button>
+        <button class="btn" id="submitBtn">Submit ✔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result box (hidden until after submit) -->
+  <div id="resultBox"></div>
+
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
